@@ -5,6 +5,7 @@ import model.constants.Colour;
 import service.ShoppingCart;
 
 import java.util.Arrays;
+import java.util.List;
 
 import static java.lang.String.format;
 
@@ -18,20 +19,28 @@ public class Main {
         Food[] items = {meat, redApple, greenApple};
         ShoppingCart cart = new ShoppingCart(items);
 
-        // Calculate and print results
-        String noDiscount = " без скидки: ";
-        String discount = " со скидкой: ";
-        String veganProducts = " вегетарианских продуктов ";
+        // Описание типов сумм
+        String noDiscountLabel = " без скидки: ";
+        String discountLabel = " со скидкой: ";
+        String veganProductsLabel = " вегетарианских продуктов ";
 
-        String totalAmountWithoutDiscount = format("Общая сумма %s", noDiscount);
-        String totalAmountDiscounted = format("Общая сумма %s", discount);
-        String TotalAmountOfVeganProductsWithoutDiscount = format("Общая сумма %s", veganProducts, noDiscount);
+        // Форматирование строк с общей суммой
+        String totalAmountWithoutDiscountMessage = String.format("Общая сумма%s", noDiscountLabel);
+        String totalAmountDiscountedMessage = String.format("Общая сумма%s", discountLabel);
+        String totalAmountOfVeganProductsMessage = String.format("Общая сумма%s", veganProductsLabel);
 
-        System.out.printf("%s%s%n", totalAmountWithoutDiscount, cart.getTotalSumWithoutDiscount());
-        for (String s : Arrays.asList(format("%s%s", totalAmountDiscounted, cart.getTotalSumWithDiscount()),
-                format("%s%s", TotalAmountOfVeganProductsWithoutDiscount,
-                        cart.getTotalSumOfVegetarianProductsWithoutDiscount()))) {
-            System.out.println(s);
+        // Печать общей суммы без скидки
+        System.out.printf("%s%s%n", totalAmountWithoutDiscountMessage, cart.getTotalSumWithoutDiscount());
+
+        // Создание списка сообщений для вывода
+        List<String> discountMessages = Arrays.asList(
+                String.format("%s%s", totalAmountDiscountedMessage, cart.getTotalSumWithDiscount()),
+                String.format("%s%s", totalAmountOfVeganProductsMessage, cart.getTotalSumOfVegetarianProductsWithoutDiscount())
+        );
+
+        // Печать сообщений со скидками
+        for (String message : discountMessages) {
+            System.out.println(message);
         }
     }
 }
