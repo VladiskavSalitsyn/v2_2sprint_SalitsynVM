@@ -20,11 +20,9 @@ public class ShoppingCart {
     public double getTotalSumWithDiscount() {
         double sum = 0;
         for (Food item : items) {
-            if (item instanceof Discountable) {
+            if (item instanceof Discountable)
                 sum += item.getAmount() * item.getPrice() * (1 - ((Discountable) item).getDiscount());
-            } else {
-                sum += item.getAmount() * item.getPrice();
-            }
+            else sum += item.getAmount() * item.getPrice();
         }
         return sum;
     }

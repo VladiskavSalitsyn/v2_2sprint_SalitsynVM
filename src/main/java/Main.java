@@ -4,6 +4,8 @@ import model.Meat;
 import model.constants.Colour;
 import service.ShoppingCart;
 
+import java.util.Arrays;
+
 import static java.lang.String.format;
 
 public class Main {
@@ -25,8 +27,11 @@ public class Main {
         String totalAmountDiscounted = format("Общая сумма %s", discount);
         String TotalAmountOfVeganProductsWithoutDiscount = format("Общая сумма %s", veganProducts, noDiscount);
 
-        System.out.println(totalAmountWithoutDiscount + cart.getTotalSumWithoutDiscount());
-        System.out.println(totalAmountDiscounted + cart.getTotalSumWithDiscount());
-        System.out.println(TotalAmountOfVeganProductsWithoutDiscount + cart.getTotalSumOfVegetarianProductsWithoutDiscount());
+        System.out.printf("%s%s%n", totalAmountWithoutDiscount, cart.getTotalSumWithoutDiscount());
+        for (String s : Arrays.asList(format("%s%s", totalAmountDiscounted, cart.getTotalSumWithDiscount()),
+                format("%s%s", TotalAmountOfVeganProductsWithoutDiscount,
+                        cart.getTotalSumOfVegetarianProductsWithoutDiscount()))) {
+            System.out.println(s);
+        }
     }
 }
