@@ -3,7 +3,7 @@ import model.Discountable;
 import model.Food;
 
 public class ShoppingCart {
-    private Food[] items;
+    private final Food[] items;
 
     public ShoppingCart(Food[] items) {
         this.items = items;

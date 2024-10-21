@@ -4,7 +4,7 @@ public abstract class Food {
 
     protected int amount; //кол-во продуктов в КГ
     protected double price; //цена за единицу товара
-    protected boolean isVegetarian;
+    protected boolean isVegetarian; //вегатерианский или нет
 
     protected Food(int amount, double price, boolean isVegetarian) {
         this.amount = amount;
