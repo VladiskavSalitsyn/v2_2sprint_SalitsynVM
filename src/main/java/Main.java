@@ -5,8 +5,9 @@ import model.Meat;
 import model.constants.Colour;
 import service.ShoppingCart;
 
-import java.util.Arrays;
-import java.util.List;
+// Импорт необходимых классов для работы с коллекциями
+import java.util.Arrays; // Импорт класса Arrays для работы с массивами
+import java.util.List;   // Импорт интерфейса List для работы со списками
 
 import static java.lang.String.format;
 
