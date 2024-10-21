@@ -9,8 +9,6 @@ import service.ShoppingCart;
 import java.util.Arrays; // Импорт класса Arrays для работы с массивами
 import java.util.List;   // Импорт интерфейса List для работы со списками
 
-import static java.lang.String.format;
-
 // Главный класс приложения
 public class Main {
     // Точка входа в программу
