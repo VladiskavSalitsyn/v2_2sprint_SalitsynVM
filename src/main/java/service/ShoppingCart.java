@@ -6,6 +6,8 @@ package service;
 import model.Discountable;
 import model.Food;
 
+import static model.constants.Discount.DEFAULT_DISCOUNT;
+
 // Класс ShoppingCart, представляющий корзину покупок
 public class ShoppingCart {
     // Массив продуктов в корзине
