@@ -5,6 +5,9 @@ package service;
 import model.Discountable;
 import model.Food;
 
+//импорт модели константы
+import static model.constants.Discount.DEFAULT_DISCOUNT;
+
 // Класс ShoppingCart, представляющий корзину покупок
 public class ShoppingCart {
     // Массив продуктов в корзине
@@ -29,9 +32,10 @@ public class ShoppingCart {
         double sum = 0; // Инициализация суммы
         for (Food item : items) { // Перебор продуктов в корзине
             if (item instanceof Discountable) { // Проверка, реализует ли продукт интерфейс Discountable
-                sum += item.getAmount() * item.getPrice() * (1 - ((Discountable) item).getDiscount()); // Добавление стоимости продукта с учетом скидки к сумме
-            } else {
                 sum += item.getAmount() * item.getPrice(); // Добавление стоимости продукта без скидки к сумме
+            } else {
+                // Добавление стоимости продукта с учетом скидки к сумме
+                sum += item.getAmount() * item.getPrice() * DEFAULT_DISCOUNT;
             }
         }
         return sum; // Возвращение общей суммы

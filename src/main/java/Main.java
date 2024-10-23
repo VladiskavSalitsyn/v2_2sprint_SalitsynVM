@@ -19,7 +19,7 @@ public class Main {
         Meat meat = new Meat(5, 100);
         // Создание объекта Apple (красное) с количеством и ценой
         Apple redApple = new Apple(10, 50, Colour.RED);
-        // Создание объекта Apple (зеленое) с количеством 8 и ценой 60
+        // Создание объекта Apple (зеленое) с количеством и ценой
         Apple greenApple = new Apple(8, 60, Colour.GREEN);
 
         // Создание массива продуктов для корзины
