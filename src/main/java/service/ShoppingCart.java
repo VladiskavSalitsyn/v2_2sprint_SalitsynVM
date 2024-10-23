@@ -2,11 +2,9 @@
 package service;
 
 // Импорт интерфейса Discountable и класса Food из пакета модели
+
 import model.Discountable;
 import model.Food;
-
-//Импорт константы
-import static model.constants.Discount.DEFAULT_DISCOUNT;
 
 // Класс ShoppingCart, представляющий корзину покупок
 public class ShoppingCart {
